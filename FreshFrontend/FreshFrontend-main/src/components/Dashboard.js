@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef} from 'react';
 import RiskCard from './RiskCard';
 import ComplianceCard from './ComplianceCard';
 import './Dashboard.css';
+import PdfExportService from '../services/PdfExportService';
 
 function Dashboard() {
   const [contracts, setContracts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedTab, setSelectedTab] = useState('overview');
+  const dashboardRef = useRef(null);
 
   useEffect(() => {
     const fetchContracts = async () => {
@@ -27,6 +29,10 @@ function Dashboard() {
 
     fetchContracts();
   }, []);
+
+  const handleExportReport = () => {
+    PdfExportService.exportDashboardToPdf(dashboardRef, `${latestContract.name || 'Contract'}-Report.pdf`);
+  };
 
   const safeContracts = contracts || [];
 
@@ -80,17 +86,17 @@ function Dashboard() {
   const compliancePercentage = Math.round((complianceCount / 3) * 100);
 
   return (
-    <div className="dashboard-container premium-dashboard">
+    <div className="dashboard-container premium-dashboard" ref={dashboardRef}>
       <header className="dashboard-header">
         <div className="dashboard-title">
           <h1>Contract Intelligence Hub</h1>
           <p className="contract-name">{latestContract.name || "Contract Analysis"}</p>
         </div>
         <div className="dashboard-actions">
-          <button className="action-button">
-            <span className="icon download-icon"></span>
-            Export Report
-          </button>
+        <button className="action-button" onClick={handleExportReport}>
+        <span className="icon download-icon"></span>
+          Export Report
+        </button>
           <button className="action-button primary" onClick={() => window.location.href = "/upload"}>
   <span className="icon analyze-icon"></span>
   New Analysis
