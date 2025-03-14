@@ -1,0 +1,74 @@
+.privacy-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: #333;
+  }
+  
+  .privacy-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #111827;
+  }
+  
+  .last-updated {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 30px;
+  }
+  
+  .policy-section {
+    margin-bottom: 40px;
+  }
+  
+  .policy-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #1f2937;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 8px;
+  }
+  
+  .policy-section h3 {
+    font-size: 18px;
+    margin: 20px 0 10px;
+    color: #374151;
+  }
+  
+  .policy-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  .policy-section ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .policy-section li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  
+  .contact-info {
+    background-color: #f9fafb;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #d1d5db;
+  }
+  
+  @media (max-width: 768px) {
+    .privacy-container {
+      padding: 20px 15px;
+    }
+    
+    .privacy-container h1 {
+      font-size: 28px;
+    }
+    
+    .policy-section h2 {
+      font-size: 22px;
+    }
+  }

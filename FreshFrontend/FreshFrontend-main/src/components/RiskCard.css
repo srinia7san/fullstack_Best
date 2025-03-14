@@ -1,0 +1,32 @@
+.risk-card {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+  
+  .severity-indicator {
+    width: 8px;
+  }
+  
+  .risk-content {
+    padding: 15px;
+    flex-grow: 1;
+  }
+  
+  .risk-content h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+  
+  .severity {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .description {
+    color: #555;
+    font-size: 14px;
+  }

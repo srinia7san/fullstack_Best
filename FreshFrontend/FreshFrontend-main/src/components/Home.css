@@ -1,0 +1,262 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.banner {
+  background-color: #f8f9fa;
+  border-radius: 30px;
+  padding: 8px 16px;
+  display: inline-flex;
+  align-items: center;
+  margin: 20px auto 40px;
+}
+
+.announcement {
+  font-size: 14px;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+.hero-section {
+  margin-bottom: 60px;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #333645 0%, #6e7280 65%, #9fa1ac 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.primary-btn {
+  background-color: #0f172a;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  margin-left: 8px;
+}
+
+.secondary-btn {
+  background-color: white;
+  color: #333;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.globe {
+  margin-left: 8px;
+}
+
+.analyzer-section {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-input-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.contract-text-area {
+  width: 100%;
+  height: 200px;
+  padding: 15px;
+  border: none;
+  background-color: white;
+  font-size: 16px;
+  resize: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.contract-text-area::placeholder {
+  color: #a0aec0;
+}
+
+.upload-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.submit-btn {
+  background-color: #0f172a;
+  color: white;
+  padding: 12px 40px;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.submit-btn:hover {
+  background-color: #1e293b;
+  transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.features-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.document-icon::before {
+  content: "📄";
+  font-size: 24px;
+}
+
+.shield-icon::before {
+  content: "🛡️";
+  font-size: 24px;
+}
+
+.clock-icon::before {
+  content: "⏱️";
+  font-size: 24px;
+}
+
+.savings-icon::before {
+  content: "💰";
+  font-size: 24px;
+}
+
+.balance-icon::before {
+  content: "⚖️";
+  font-size: 24px;
+}
+
+.lightning-icon::before {
+  content: "⚡";
+  font-size: 24px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+.features-section{
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 36px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .features-section {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,179 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.prName {
+  background: linear-gradient(90deg, #333645 0%, #6e7280 65%, #9fa1ac 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-link {
+  position: relative;
+  margin-right: 30px;
+  color: #000000;
+  transition: color 0.3s;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.nav-link:hover {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 5px #5a595a,
+              0 0 25px #5d5c5e,
+              0 0 50px #7b7a7c,
+              0 0 200px #787679;
+}
+
+.nav-link span {
+  position: absolute;
+  display: block;
+}
+
+.nav-link span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+.nav-link span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% { top: -100%; }
+  50%, 100% { top: 100%; }
+}
+
+.nav-link span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+
+@keyframes animate3 {
+  0% { right: -100%; }
+  50%, 100% { right: 100%; }
+}
+
+.nav-link span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% { bottom: -100%; }
+  50%, 100% { bottom: 100%; }
+}
+
+.signup-btn {
+  background-color: #000;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-right: 15px;
+}
+
+.login-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.logout-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #bd0303;
+}
+
+.login-btn:hover {
+  background-color: #3c9b01;
+}
+
+/* New styles for sign-in button */
+.sign-in-btn {
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.sign-in-btn:hover {
+  background-color: #000;
+  color: white;
+  border-radius: 20px;
+}
+
+.sign-in-btn::after, .sign-in-btn::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #ff0000, #00ffff);
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+}
+
+.sign-in-btn::before {
+  top: -5px;
+  transform-origin: left;
+}
