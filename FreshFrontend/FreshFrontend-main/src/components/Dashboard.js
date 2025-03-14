@@ -45,25 +45,6 @@ function Dashboard() {
     fetchData();
   }, [id]);
 
-  useEffect(() => {
-    const fetchContracts = async () => {
-      try {
-        const response = await fetch('http://localhost:8080/api/contracts');
-        if (!response.ok) {
-          throw new Error('Failed to fetch contracts');
-        }
-        const data = await response.json();
-        setContracts(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchContracts();
-  }, []);
-
   const handleExportReport = () => {
     PdfExportService.exportDashboardToPdf(dashboardRef, `${latestContract.name || 'Contract'}-Report.pdf`);
   };

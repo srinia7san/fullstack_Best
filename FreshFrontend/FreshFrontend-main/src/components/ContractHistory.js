@@ -28,6 +28,7 @@ function ContractHistory() {
   }, []);
 
   const handleViewContract = (contractId) => {
+    console.log(`Navigating to contract ID: ${contractId}`);
     navigate(`/contract/${contractId}`);
   };
 
