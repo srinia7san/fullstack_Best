@@ -9,7 +9,7 @@ import SignUp from './components/SignUp';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import AboutUs from './components/AboutUs'; // Import the AboutUs component
 import './App.css';
-import FileUploader from './components/FileUploader';
+import ContractHistory from './components/ContractHistory';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,6 +40,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/upload" element={<Home/>} />
+            <Route path="/history" element={<ContractHistory />} />
           </Routes>
         </main>
         <Footer />

@@ -3,6 +3,7 @@ import RiskCard from './RiskCard';
 import ComplianceCard from './ComplianceCard';
 import './Dashboard.css';
 import PdfExportService from '../services/PdfExportService';
+import { useParams } from 'react-router-dom';
 
 function Dashboard() {
   const [contracts, setContracts] = useState([]);
@@ -10,6 +11,39 @@ function Dashboard() {
   const [error, setError] = useState(null);
   const [selectedTab, setSelectedTab] = useState('overview');
   const dashboardRef = useRef(null);
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        
+        if (id) {
+          // Fetch specific contract if ID is provided
+          const response = await fetch(`http://localhost:8080/api/contracts/${id}`);
+          if (!response.ok) {
+            throw new Error('Failed to fetch contract');
+          }
+          const data = await response.json();
+          setContracts([data]); // Put single contract in array to maintain existing code structure
+        } else {
+          // Fetch all contracts if no ID is provided
+          const response = await fetch('http://localhost:8080/api/contracts');
+          if (!response.ok) {
+            throw new Error('Failed to fetch contracts');
+          }
+          const data = await response.json();
+          setContracts(data);
+        }
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    fetchData();
+  }, [id]);
 
   useEffect(() => {
     const fetchContracts = async () => {
@@ -90,13 +124,17 @@ function Dashboard() {
       <header className="dashboard-header">
         <div className="dashboard-title">
           <h1>Contract Intelligence Hub</h1>
-          <p className="contract-name">{latestContract.name || "Contract Analysis"}</p>
+          <p className="contract-name">{latestContract && latestContract.name|| "Contract Analysis"}</p>
         </div>
         <div className="dashboard-actions">
         <button className="action-button" onClick={handleExportReport}>
         <span className="icon download-icon"></span>
           Export Report
         </button>
+        <button className="action-button" onClick={() => window.location.href = "/history"}>
+    <span className="icon history-icon"></span>
+    View History
+  </button>
           <button className="action-button primary" onClick={() => window.location.href = "/upload"}>
   <span className="icon analyze-icon"></span>
   New Analysis

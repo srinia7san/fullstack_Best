@@ -16,6 +16,8 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    private String name;
+    
     @Lob
     private String text;
     
@@ -34,87 +36,86 @@ public class Contract {
         createdAt = new Date();
     }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setText(String text) {
-		this.text = text;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getRiskLevel() {
-		return riskLevel;
-	}
+    public String getText() {
+        return text;
+    }
 
-	public void setRiskLevel(int riskLevel) {
-		this.riskLevel = riskLevel;
-	}
+    public void setText(String text) {
+        this.text = text;
+    }
 
-	public List<Risk> getRisks() {
-		return risks;
-	}
+    public int getRiskLevel() {
+        return riskLevel;
+    }
 
-	public void setRisks(List<Risk> risks) {
-		this.risks = risks;
-	}
+    public void setRiskLevel(int riskLevel) {
+        this.riskLevel = riskLevel;
+    }
 
-	public Compliance getCompliance() {
-		return compliance;
-	}
+    public List<Risk> getRisks() {
+        return risks;
+    }
 
-	public void setCompliance(Compliance compliance) {
-		this.compliance = compliance;
-	}
+    public void setRisks(List<Risk> risks) {
+        this.risks = risks;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public Compliance getCompliance() {
+        return compliance;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public void setCompliance(Compliance compliance) {
+        this.compliance = compliance;
+    }
 
-	public void setOpportunityLevel(List<com.contractanalysis.model.Opportunity> opportunities) {
-		// TODO Auto-generated method stub
-		
-	}
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 
-	public void setKeyClauses(List<com.contractanalysis.model.KeyClause> keyClauses) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
 
-	public void setOpportunityLevel(int i) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void setOpportunityLevel(List<com.contractanalysis.model.Opportunity> opportunities) {
+        // TODO Auto-generated method stub
+    }
 
-	public KeyClause[] getKeyClauses() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public void setKeyClauses(List<com.contractanalysis.model.KeyClause> keyClauses) {
+        // TODO Auto-generated method stub
+    }
 
-	public Opportunity[] getOpportunities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public void setOpportunityLevel(int i) {
+        // TODO Auto-generated method stub
+    }
 
-	public Object getOpportunityLevel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public KeyClause[] getKeyClauses() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	
+    public Opportunity[] getOpportunities() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-	
-
-	
+    public Object getOpportunityLevel() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

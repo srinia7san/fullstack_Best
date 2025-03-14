@@ -443,6 +443,7 @@ body {
   min-width: 80px;
 }
 
+
 @media (max-width: 480px) {
   .compliance-badge {
     width: 100%;
