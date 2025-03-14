@@ -1,7 +1,7 @@
 import React from 'react';
 import './RiskCard.css';
 
-function RiskCard({ risk }) {
+function RiskCard({ risk, premium, expanded }) {
   const getSeverityColor = (severity) => {
     switch (severity.toLowerCase()) {
       case 'high':
@@ -16,14 +16,14 @@ function RiskCard({ risk }) {
   };
 
   return (
-    <div className="risk-card">
+    <div className={`risk-card ${premium ? 'premium' : ''} ${expanded ? 'expanded' : ''}`}>
       <div 
         className="severity-indicator" 
         style={{ backgroundColor: getSeverityColor(risk.severity) }}
       ></div>
       <div className="risk-content">
         <h3>{risk.type}</h3>
-        <p className="severity">{risk.severity} Severity</p>
+        <p className={`severity ${risk.severity.toLowerCase()}`}>{risk.severity} Severity</p>
         <p className="description">{risk.description}</p>
       </div>
     </div>
